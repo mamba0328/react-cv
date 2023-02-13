@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/react-cv/static/css/main.29f003e7.css",
+    "main.js": "/react-cv/static/js/main.bcda7931.js",
+    "static/media/Apercu Medium.otf": "/react-cv/static/media/Apercu Medium.aedaec26a758f9fbd8d4.otf",
+    "static/media/Apercu Regular.otf": "/react-cv/static/media/Apercu Regular.83b693d3141cb9dd1538.otf",
+    "static/media/Apercu Bold.otf": "/react-cv/static/media/Apercu Bold.49e3b9c981f064376dcf.otf",
+    "index.html": "/react-cv/index.html",
+    "main.29f003e7.css.map": "/react-cv/static/css/main.29f003e7.css.map",
+    "main.bcda7931.js.map": "/react-cv/static/js/main.bcda7931.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.29f003e7.css",
+    "static/js/main.bcda7931.js"
+  ]
+}

@@ -1,0 +1,114 @@
+@import '../mixins';
+
+.footer {
+    width: 100%;
+    position: relative;
+
+    &:hover {
+        &::after {
+            content: '';
+            height: 100%;
+            width: 3px;
+            background-color: #FFF;
+            left: -20px;
+            top: 0;
+            position: absolute
+        }
+    }
+}
+
+.skills {
+    @include flex(row, flex-start, center);
+    flex-wrap: wrap;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.skill {
+    font-size: 1.2rem;
+    padding: 10px;
+    border: 2px dotted rgba(250, 250, 250, 0.3);
+    border-radius: 4px;
+    position: relative;
+
+    &_add {
+        @include flex(row, center, center);
+        width: 40px;
+        padding: 0;
+        height: 40px;
+
+        font-size: 3rem;
+        border-radius: 50%;
+        background-color: rgba(250, 250, 250, 0.3);
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba(250, 250, 250, 0.8);
+        }
+    }
+
+    &_isChanging {
+        font-size: 1.2rem;
+        padding: 10px;
+        border: 2px dotted rgba(250, 250, 250, 0.3);
+        border-radius: 4px;
+        background-color: transparent;
+        color: #FFF;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__button {
+        text-align: start;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    &__delete {
+        opacity: 0;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #FFF;
+        position: absolute;
+        right: -8px;
+        top: -8px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 3px;
+            height: 12px;
+            background-color: #262626;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 3px;
+            background-color: #262626;
+        }
+
+        transform: rotate(45deg);
+    }
+
+    &:has(.skill__title:hover) {
+        border: 2px dotted rgba(250, 250, 250, 0.8);
+    }
+
+    &:hover {
+        .skill__delete {
+            opacity: 1;
+        }
+    }
+}

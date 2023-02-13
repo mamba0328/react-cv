@@ -1,0 +1,54 @@
+.header {
+    @include flex(row, space-between, center);
+    width: 100%;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    padding-right: 5vw;
+    margin-bottom: 3vw;
+    position: relative;
+
+    &__fname {
+        font-size: 4.2rem;
+        margin: 0 0 15px 0;
+        opacity: 0.7;
+        cursor: pointer;
+
+    }
+
+    &__title {
+        cursor: pointer;
+        opacity: 0.7;
+    }
+
+    &__contacts {
+        padding: 20px 0;
+        opacity: 0.7;
+        cursor: pointer;
+        text-align: right;
+        line-height: 1.8;
+    }
+
+    &:hover {
+        &::after {
+            content: '';
+            height: 100%;
+            width: 3px;
+            background-color: #FFF;
+            left: -20px;
+            top: 0;
+            position: absolute
+        }
+    }
+
+    &_changing {
+        &::after {
+            content: '';
+            height: 100%;
+            width: 3px;
+            background-color: #FFF;
+            left: -20px;
+            top: 0;
+            position: absolute
+        }
+    }
+}

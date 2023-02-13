@@ -1,0 +1,29 @@
+@import 'normalize';
+@import 'vars';
+@import 'fonts';
+@import 'mixins';
+
+@import './components/header';
+@import './components/main';
+@import './components/footer';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: $font-size;
+    color: $font-color;
+}
+
+.App {
+    @include flex(column, center, center);
+    margin: 0 auto;
+    color: $font-color;
+    font-family: 'Apercu', sans-serif;
+    max-width: 820px;
+    width: 100%;
+    padding: 40px 80px 100px 80px;
+}

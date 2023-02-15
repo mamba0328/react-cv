@@ -1,149 +1,137 @@
 import './css/App.css';
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header';
 import Main from './components/main/Main';
 import Footer from './components/Footer';
 import uniqid from "uniqid";
 
-class App extends Component {
-  constructor() {
-    super()
+function App() {
+  const [fname, setFname] = useState('Dzhezhulei Valentyn');
+  const [title, setTitle] = useState('Fronten Developer');
+  const [email, setEmail] = useState('valentindjejyley@gmail.com');
+  const [residence, setResidence] = useState('Kiev, Ukraine');
 
-    this.state = {
-      // header
-      fname: 'Dzhezhulei Valentyn',
-      title: "Fronten Developer",
-      email: 'valentindjejyley@gmail.com',
-      residence: 'Kiev, Ukraine',
-      ////////////////////////////////////
-      //main
-      workPlaces: [
-        {
-          company: 'le Silpo',
-          title: 'Front-end developer',
-          desc: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, here.',
-          year: 2020,
-          id: uniqid(),
-        },
-        {
-          company: 'le Silpo',
-          title: 'Front-end developer',
-          desc: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, here.',
-          year: 2021,
-          id: uniqid(),
-        },
-        {
-          company: 'le Silpo',
-          title: 'Front-end developer',
-          desc: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, here.',
-          year: 2022,
-          id: uniqid(),
-        },
-      ],
-      educationPlaces: [{
-        name: 'Nepal Police School',
-        desc: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, here.',
-        year: 2015,
-        id: uniqid(),
-      },
-      {
-        name: 'Nepal Police School',
-        desc: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, here.',
-        year: 2015,
-        id: uniqid(),
-      },
-      {
-        name: 'Nepal Police School',
-        desc: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, here.',
-        year: 2015,
-        id: uniqid(),
-      },],
-      skills: [
-        {
-          name: 'Three.js',
-          id: uniqid(),
-          isChanging: false,
-        },
-        {
-          name: 'React.js',
-          id: uniqid(),
-          isChanging: false,
-        },
-        {
-          name: 'GSAP',
-          id: uniqid(),
-          isChanging: false,
-        },
-        {
-          name: 'Webflow',
-          id: uniqid(),
-          isChanging: false,
-        },
-        {
-          name: 'Spline.design',
-          id: uniqid(),
-          isChanging: false,
-        },
-        {
-          name: 'SEO',
-          id: uniqid(),
-          isChanging: false,
-        },
-        {
-          name: 'Figma',
-          id: uniqid(),
-          isChanging: false,
-        },
-        {
-          name: 'Blender',
-          id: uniqid(),
-          isChanging: false,
-        },
-        {
-          name: 'Vue.js',
-          id: uniqid(),
-          isChanging: false,
-        },],
+  const [workPlaces, setWorkPlaces] = useState([
+    {
+      company: 'le Silpo',
+      title: 'Front-end developer',
+      desc: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, here.',
+      year: 2020,
+      id: uniqid(),
+    },
+    {
+      company: 'le Silpo',
+      title: 'Front-end developer',
+      desc: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, here.',
+      year: 2021,
+      id: uniqid(),
+    },
+    {
+      company: 'le Silpo',
+      title: 'Front-end developer',
+      desc: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, here.',
+      year: 2022,
+      id: uniqid(),
+    },
+  ]);
 
-      isChanging: {
-        headerIsChanging: false,
+  const [educationPlaces, setEducationPlaces] = useState([{
+    name: 'Nepal Police School',
+    desc: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, here.',
+    year: 2015,
+    id: uniqid(),
+  },
+  {
+    name: 'Nepal Police School',
+    desc: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, here.',
+    year: 2015,
+    id: uniqid(),
+  },
+  {
+    name: 'Nepal Police School',
+    desc: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, here.',
+    year: 2015,
+    id: uniqid(),
+  }]);
+
+  const [skills, setSkills] = useState([{
+    name: 'Three.js',
+    id: uniqid(),
+    isChanging: false,
+  },
+  {
+    name: 'React.js',
+    id: uniqid(),
+    isChanging: false,
+  },
+  {
+    name: 'GSAP',
+    id: uniqid(),
+    isChanging: false,
+  },
+  {
+    name: 'Webflow',
+    id: uniqid(),
+    isChanging: false,
+  },
+  {
+    name: 'Spline.design',
+    id: uniqid(),
+    isChanging: false,
+  },
+  {
+    name: 'SEO',
+    id: uniqid(),
+    isChanging: false,
+  },
+  {
+    name: 'Figma',
+    id: uniqid(),
+    isChanging: false,
+  },
+  {
+    name: 'Blender',
+    id: uniqid(),
+    isChanging: false,
+  },
+  {
+    name: 'Vue.js',
+    id: uniqid(),
+    isChanging: false,
+  }]);
+
+  const [isChanging, setIsChanging] = useState({
+    headerIsChanging: false,
+    workPlacesIsChanging: false,
+    educationIsChanging: false,
+  });
+
+
+  function setIsChangingOnClick(e) {
+    const classesOfTarget = String(e.target.className);
+
+    if (classesOfTarget.includes('jsHead')) {
+      setIsChanging({
+        headerIsChanging: true,
         workPlacesIsChanging: false,
         educationIsChanging: false,
-      }
-    }
-  }
-
-  setIsChanging = (e) => {
-    const classesOfTarget = String(e.target.className);
-    console.log(classesOfTarget)
-    if (classesOfTarget.includes('jsHead')) {
-      this.setState({
-        isChanging: {
-          headerIsChanging: true,
-          workPlacesIsChanging: false,
-          educationIsChanging: false,
-        }
       })
     } else if (classesOfTarget.includes('jsWorkPlaces')) {
-      this.setState({
-        isChanging: {
-          headerIsChanging: false,
-          workPlacesIsChanging: true,
-          educationIsChanging: false,
-        }
+      setIsChanging({
+        headerIsChanging: false,
+        workPlacesIsChanging: true,
+        educationIsChanging: false,
       })
     } else if (classesOfTarget.includes('jsEducation')) {
-      this.setState({
-        isChanging: {
-          headerIsChanging: false,
-          workPlacesIsChanging: false,
-          educationIsChanging: true,
-        }
+      setIsChanging({
+        headerIsChanging: false,
+        workPlacesIsChanging: false,
+        educationIsChanging: true,
       })
     }
   }
 
-  submitChanges = (e) => {
+  function submitChanges(e) {
 
     if (e.key !== 'Enter') {
       return
@@ -151,21 +139,17 @@ class App extends Component {
 
     const classesOfTarget = String(e.target.className);
     if (classesOfTarget.includes('jsHeader')) {
-      this.setState(
-        {
-          fname: document.getElementById('jsFName').value,
-          title: document.getElementById('jsTitle').value,
-          email: document.getElementById('jsEmail').value,
-          residence: document.getElementById('jsResidence').value,
-          isChanging: {
-            headerIsChanging: false,
-            workPlacesIsChanging: false,
-            educationIsChanging: false,
-          }
-        }
-      )
+      setFname(document.getElementById('jsFName').value);
+      setTitle(document.getElementById('jsTitle').value);
+      setEmail(document.getElementById('jsEmail').value);
+      setResidence(document.getElementById('jsResidence').value);
+      setIsChanging({
+        headerIsChanging: false,
+        workPlacesIsChanging: false,
+        educationIsChanging: false,
+      })
     } else if (classesOfTarget.includes('jsExperience')) {
-      const places = this.state.workPlaces
+      const places = workPlaces
       const newWorkPlaces = [];
       places.forEach((place, i = 0) => {
         const lists = document.querySelectorAll(`#${place.id}`);
@@ -182,19 +166,14 @@ class App extends Component {
           id: uniqid(),
         })
       })
-
-      this.setState(
-        {
-          workPlaces: newWorkPlaces,
-          isChanging: {
-            headerIsChanging: false,
-            workPlacesIsChanging: false,
-            educationIsChanging: false,
-          }
-        }
-      )
+      setWorkPlaces(newWorkPlaces);
+      setIsChanging({
+        headerIsChanging: false,
+        workPlacesIsChanging: false,
+        educationIsChanging: false,
+      });
     } else if (classesOfTarget.includes('jsEducation')) {
-      const places = this.state.educationPlaces
+      const places = educationPlaces
 
       const newEducation = [];
       places.forEach((place, i = 0) => {
@@ -211,57 +190,44 @@ class App extends Component {
         })
       })
 
-      this.setState(
-        {
-          educationPlaces: newEducation,
-          isChanging: {
-            headerIsChanging: false,
-            workPlacesIsChanging: false,
-            educationIsChanging: false,
-          }
-        }
-      )
+      setEducationPlaces(newEducation);
+      setIsChanging({
+        headerIsChanging: false,
+        workPlacesIsChanging: false,
+        educationIsChanging: false,
+      });
     }
   }
 
-  addSkill = () => {
-    const skillsDuble = this.state.skills.slice()
+  function addSkill() {
+    const skillsDuble = skills.slice()
     skillsDuble.push({
       name: 'Your Skill',
       id: uniqid(),
       isChanging: false,
     })
 
-    this.setState(
-      {
-        skills: skillsDuble,
-      }
-    )
+    setSkills(skillsDuble);
   }
 
-  changeSkill = (e) => {
+  function changeSkill(e) {
     const changeSkillId = e.target.id;
-    const skillsDuble = this.state.skills.slice();
+    const skillsDuble = skills.slice();
     skillsDuble.map(skill => {
       skill.isChanging = false;
       if (skill.id === changeSkillId) {
         skill.isChanging = true;
       }
     })
-    console.log(skillsDuble)
-    this.setState(
-      {
-        skills: skillsDuble,
-      }
-    )
+    setSkills(skillsDuble);
   }
 
-  submitSkill = (e) => {
+  function submitSkill(e) {
     if (e.key !== 'Enter') {
       return
     }
 
-    const skillsDuble = this.state.skills.map((skill) => {
+    const skillsDuble = skills.map((skill) => {
       return skill.isChanging ?
         skill = {
           name: document.getElementById(`${skill.id}`).value,
@@ -270,40 +236,28 @@ class App extends Component {
         }
         : skill
     })
-    console.log(skillsDuble)
-    this.setState({
-      skills: skillsDuble,
-    })
+    setSkills(skillsDuble);
   }
 
-  deleteSkill = (e) => {
+  function deleteSkill(e) {
     const deleteId = e.target.parentElement.id
-    const filteredSkills = this.state.skills.filter(skill => {
+    const filteredSkills = skills.filter(skill => {
       if (skill.id !== deleteId) {
         return skill
       }
     })
 
-    console.log(filteredSkills);
-
-    this.setState(
-      {
-        skills: filteredSkills,
-      }
-    )
+    setSkills(filteredSkills);
   }
 
-  render() {
-    let state = this.state
-    return (
-      <div className="App" onKeyDown={this.submitChanges}>
-        <Header fname={state.fname} title={state.title} email={state.email} residence={state.residence} isChanging={state.isChanging.headerIsChanging} setIsChanging={this.setIsChanging} submitChanges={this.submitChanges} />
-        <Main workPlaces={state.workPlaces} isChanging={state.isChanging} setIsChanging={this.setIsChanging} submitChanges={this.submitChanges} educationPlaces={state.educationPlaces} />
-        <Footer skills={state.skills} deleteSkill={this.deleteSkill} addSkill={this.addSkill} changeSkill={this.changeSkill} submitSkill={this.submitSkill} />
-      </div>
-    );
-  }
-
+  return (
+    <div className="App" onKeyDown={submitChanges}>
+      <Header fname={fname} title={title} email={email} residence={residence} isChanging={isChanging.headerIsChanging} setIsChanging={setIsChangingOnClick} submitChanges={submitChanges} />
+      <Main workPlaces={workPlaces} isChanging={isChanging} setIsChanging={setIsChangingOnClick} submitChanges={submitChanges} educationPlaces={educationPlaces} />
+      <Footer skills={skills} deleteSkill={deleteSkill} addSkill={addSkill} changeSkill={changeSkill} submitSkill={submitSkill} />
+    </div>
+  );
 }
+
 
 export default App;
